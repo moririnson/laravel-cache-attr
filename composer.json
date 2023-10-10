@@ -1,0 +1,33 @@
+{
+    "name": "morimorim/laravel-cache-attr",
+    "description": "Attribute for cache",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^10.26",
+        "php": "^8.2",
+        "ray/aop": "^2",
+        "eftec/bladeone": "^4.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Laravel\\Cache\\": "src/"
+        }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+            "Laravel\\Cache\\LaravelCacheAttrServiceProvider"
+        ]
+      }
+    },
+    "authors": [
+        {
+            "name": "moririnson",
+            "email": "morimorim7180@gmail.com"
+        }
+    ]
+}
