@@ -3,7 +3,7 @@
     "description": "Attribute for cache",
     "type": "library",
     "require": {
-        "illuminate/support": "^10.26",
+        "illuminate/support": "^9|^10",
         "php": "^8.2",
         "ray/aop": "^2",
         "eftec/bladeone": "^4.9"
