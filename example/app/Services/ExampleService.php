@@ -15,8 +15,9 @@ class ExampleService
     }
 
     #[Cacheable(name: 'ExampleService#heavyProcess', ttl_seconds: 60)]
-    public function heavyProcess(int $sleep)
+    public function heavyProcess(int $sleep, MyType $type)
     {
+        echo $type->name;
         sleep($sleep);
         return Carbon::now();
     }

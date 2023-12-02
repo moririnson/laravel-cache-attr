@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Services\ExampleService;
+use App\Services\MyType;
 use Illuminate\Console\Command;
 
 class CacheableExample extends Command
@@ -35,7 +36,7 @@ class CacheableExample extends Command
      */
     public function handle()
     {
-        $carbon = $this->service->heavyProcess(1);
+        $carbon = $this->service->heavyProcess(1, MyType::TEST_1);
         echo $carbon->getTimestampMs();
     }
 }

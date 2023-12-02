@@ -4,8 +4,14 @@
 @foreach ($methods as $method)
 public function {{ $method->name }}({{ $method->args }})
 {{ '{' }}
-    $args_combine = implode(' . ', func_get_args());
-    $key = '{{ $original->full_qualifier }}::{{ $method->attribute->getArguments()['name'] }}::' . $args_combine;
+    $args = array_map(function ($arg) {
+        if ($arg instanceof \UnitEnum) {
+            return $arg->name;
+        }
+        return $arg;
+    }, func_get_args());
+    $args_combine = implode(' . ', $args);
+    $key = '{{ $original->full_qualifier }}||{{ $method->attribute->getArguments()['name'] }}||' . $args_combine;
     $cache = Cache::get($key);
     if (isset($cache)) {
         return $cache;
